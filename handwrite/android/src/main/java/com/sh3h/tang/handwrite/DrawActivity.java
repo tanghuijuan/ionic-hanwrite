@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -51,6 +52,19 @@ public class DrawActivity extends AppCompatActivity {
         gainPermission();
         gainCurrenTime();
         initView();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            Intent intent=new Intent();
+            intent.putExtra(GlobalConst.error,"返回键");
+            setResult(Activity.RESULT_CANCELED,intent);
+            finish();
+            return false;
+        }else {
+            return super.onKeyDown(keyCode, event);
+        }
     }
 
     private void gainPermission() {
@@ -109,7 +123,7 @@ public class DrawActivity extends AppCompatActivity {
                     Toast.makeText(DrawActivity.this, "保存失败", Toast.LENGTH_SHORT).show();
                     Intent intent=new Intent();
                     intent.putExtra(GlobalConst.error,"保存失败");
-                    setResult(Activity.RESULT_CANCELED);
+                    setResult(Activity.RESULT_CANCELED,intent);
                     finish();
                 }
             }
