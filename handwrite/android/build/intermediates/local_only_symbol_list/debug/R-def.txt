@@ -1,0 +1,39 @@
+R_DEF: Internal format may change without notice
+local
+attr? border_color
+attr? border_width
+attr? maxWidth
+attr? minWidth
+attr? penColor
+attr? pstsDividerColor
+attr? pstsDividerPadding
+attr? pstsIndicatorColor
+attr? pstsIndicatorHeight
+attr? pstsScrollOffset
+attr? pstsShouldExpand
+attr? pstsTabBackground
+attr? pstsTabPaddingLeftRight
+attr? pstsTextAllCaps
+attr? pstsUnderlineColor
+attr? pstsUnderlineHeight
+attr? velocityFilterWeight
+color black
+color colorAccent
+color colorPrimary
+color colorPrimaryDark
+id action_delete
+id action_save
+id buttons_container
+id clear_button
+id save_button
+id signature_pad
+id webview
+layout activity_draw
+layout bridge_layout_main
+menu menu_normal
+string my_string
+style AppTheme
+style CustomNoActionBar
+styleable CircleImageView border_width border_color
+styleable PagerSlidingTabStrip pstsIndicatorColor pstsUnderlineColor pstsDividerColor pstsIndicatorHeight pstsUnderlineHeight pstsDividerPadding pstsTabPaddingLeftRight pstsScrollOffset pstsTabBackground pstsShouldExpand pstsTextAllCaps
+styleable SignatureView minWidth maxWidth penColor velocityFilterWeight

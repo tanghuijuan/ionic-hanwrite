@@ -1,0 +1,8 @@
+{
+  "appId": "com.sh3h.handwritting",
+  "appName": "handwrite",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

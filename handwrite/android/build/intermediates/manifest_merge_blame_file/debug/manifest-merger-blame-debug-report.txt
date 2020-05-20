@@ -1,0 +1,28 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.sh3h.tang.handwrite.handwrite"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/shanghai3h/work/myHanwritting/myApp/node_modules/handwrite/android/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/Users/shanghai3h/work/myHanwritting/myApp/node_modules/handwrite/android/src/main/AndroidManifest.xml
+10
+11    <application android:theme="@style/CustomNoActionBar" >
+11-->/Users/shanghai3h/work/myHanwritting/myApp/node_modules/handwrite/android/src/main/AndroidManifest.xml:4:7-11:21
+11-->/Users/shanghai3h/work/myHanwritting/myApp/node_modules/handwrite/android/src/main/AndroidManifest.xml:5:11-51
+12        <activity android:name="com.sh3h.tang.handwrite.DrawActivity" >
+12-->/Users/shanghai3h/work/myHanwritting/myApp/node_modules/handwrite/android/src/main/AndroidManifest.xml:6:10-10:21
+12-->/Users/shanghai3h/work/myHanwritting/myApp/node_modules/handwrite/android/src/main/AndroidManifest.xml:6:20-71
+13            <intent-filter>
+13-->/Users/shanghai3h/work/myHanwritting/myApp/node_modules/handwrite/android/src/main/AndroidManifest.xml:7:14-9:30
+14                <action android:name="android.intent.action.VIEW" />
+14-->/Users/shanghai3h/work/myHanwritting/myApp/node_modules/handwrite/android/src/main/AndroidManifest.xml:8:18-70
+14-->/Users/shanghai3h/work/myHanwritting/myApp/node_modules/handwrite/android/src/main/AndroidManifest.xml:8:26-67
+15            </intent-filter>
+16        </activity>
+17    </application>
+18
+19</manifest>
