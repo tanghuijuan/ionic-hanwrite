@@ -14,4 +14,14 @@ public class handwrite: CAPPlugin {
             "value": value
         ])
     }
+
+    @objc func  handWrite(_ call :CAPPluginCall){
+         let value = call.getString("path") ?? ""
+       // call.success([
+       //     "value": value
+       //  ])
+         call.success([
+            "value": value
+        ])
+    }
 }

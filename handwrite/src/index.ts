@@ -10,6 +10,10 @@ export class CustomSuperPlugin {
    // console.log('plugins',Plugins);
    // console.log('handWritePlugin',handWritePlugin);   
    console.log('plugins',);
-    return  Plugins.Handwrite.handWrite({path:path});
+   if(!!Plugins.Handwrite){
+      return  Plugins.Handwrite.handWrite({path:path});
+   }else{
+      return  Plugins.handwrite.handWrite({path:path});
+   }
  }
 }
