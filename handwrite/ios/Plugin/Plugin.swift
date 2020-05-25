@@ -23,15 +23,18 @@ public class handwrite: CAPPlugin {
         if(""==value){
             call.reject("path is null");
         }
-         call.success([
-            "value": value
-        ])
+      //   call.success([
+      //      "value": value
+      //  ])
       DispatchQueue.main.async {
 
         let myViewController = secondViewController()
         
         myViewController.backValueclusore = {(text:String)->Void in
                print("-\(text) message -\(text)")
+               call.success(([
+                   "value": value
+               ]))
         }
         
         myViewController.path = value;
