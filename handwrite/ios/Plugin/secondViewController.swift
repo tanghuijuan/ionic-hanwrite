@@ -7,21 +7,68 @@
 
 import UIKit
 
+extension Date {
+
+    /// 获取当前 秒级 时间戳 - 10位
+    var timeStamp : String {
+        let timeInterval: TimeInterval = self.timeIntervalSince1970
+        let timeStamp = Int(timeInterval)
+        return "/\(timeStamp).png"
+    }
+
+    /// 获取当前 毫秒级 时间戳 - 13位
+    var milliStamp : String {
+        let timeInterval: TimeInterval = self.timeIntervalSince1970
+        let millisecond = CLongLong(round(timeInterval*1000))
+        return "/\(millisecond).png"
+    }
+}
+
 class secondViewController: UIViewController {
     
     var backValueclusore:((_ text:String)->Void)?
-    var path:String?;
+    var path:String?
+    
+    var fileName:String?
     
     //签名区域视图
     var drawView:DrawSignatureView!
     
-    
+                 
     @IBAction func toPrePage(_ sender: Any) {
         let signatureImage = self.drawView.getSignature()
         UIImageWriteToSavedPhotosAlbum(signatureImage, nil, nil, nil)
+        
+        
+        fileName = Date().timeStamp
+        print("message -\(path)")
+        
+        if path == nil{
+            path =  "/Documents/sh3h/ordermanager/attachment/images"
+         } else {
+        //    path = "/\(path)"
+            path = "/".appending( path ?? "Documents/sh3h/ordermanager/attachment/images")  as String
+        }
+        
+        let fileManager = FileManager.default
+        let fileDirectory:String = NSHomeDirectory() + (path ??  "Documents/sh3h/ordermanager/attachment/images")
+        let exist = fileManager.fileExists(atPath: fileDirectory)
+        if !exist {
+          //  try! fileManager.createDirectory(atPath : fileDirectory,
+                             //       withIntermediateDirectories: true, attributes: nil)
+          try! fileManager.createDirectory(atPath : fileDirectory,
+                                            withIntermediateDirectories: true, attributes: nil)
+        }
+        
+        let dt:String = (fileDirectory  + (fileName ?? "/1000001.png") ) as String;
+        
+        print("message -\(dt)")
+             
+        try? signatureImage.pngData()?.write(to: URL(fileURLWithPath: dt))
+
         self.drawView.clearSignature()
         
-        self.backValueclusore!("123")
+        self.backValueclusore!(fileName ?? "/1000001.png")
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -59,15 +106,5 @@ class secondViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
