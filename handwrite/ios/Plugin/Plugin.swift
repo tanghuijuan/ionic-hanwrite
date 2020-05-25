@@ -20,8 +20,31 @@ public class handwrite: CAPPlugin {
        // call.success([
        //     "value": value
        //  ])
+        if(""==value){
+            call.reject("path is null");
+        }
          call.success([
             "value": value
         ])
+      DispatchQueue.main.async {
+
+        let myViewController = secondViewController()
+        
+        myViewController.backValueclusore = {(text:String)->Void in
+               print("-\(text) message -\(text)")
+        }
+        
+        myViewController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        
+      //  myViewController.edgesForExtendedLayout = UIRectEdge.right
+            //UIRectEdge.all UIRectEdgeNone  uirectedgenone
+            //myViewController.edgesForExtendedLayout = uirectedgenone;
+              
+      //  self.setCenteredPopover(myViewController)
+       self.bridge.viewController.present(myViewController, animated: false, completion: nil)
+    
+     //跳转
+     //   self.bridge.viewController.(myViewController , animated: true)
+        }
     }
 }

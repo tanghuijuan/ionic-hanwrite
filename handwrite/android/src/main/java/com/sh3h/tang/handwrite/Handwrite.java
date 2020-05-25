@@ -66,5 +66,7 @@ public class Handwrite extends Plugin {
                return;
             }
         }
+
+        notifyListeners();
     }
 }
