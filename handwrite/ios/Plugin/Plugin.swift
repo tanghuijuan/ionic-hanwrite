@@ -34,6 +34,9 @@ public class handwrite: CAPPlugin {
                print("-\(text) message -\(text)")
         }
         
+        myViewController.path = value;
+        
+        //设置占满全屏
         myViewController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         
       //  myViewController.edgesForExtendedLayout = UIRectEdge.right

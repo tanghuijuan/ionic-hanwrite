@@ -10,19 +10,23 @@ import UIKit
 class secondViewController: UIViewController {
     
     var backValueclusore:((_ text:String)->Void)?
+    var path:String?;
     
     //签名区域视图
     var drawView:DrawSignatureView!
     
     
     @IBAction func toPrePage(_ sender: Any) {
-        self.backValueclusore!("123");
-        self.dismiss(animated: true, completion: nil);
+        let signatureImage = self.drawView.getSignature()
+        UIImageWriteToSavedPhotosAlbum(signatureImage, nil, nil, nil)
+        self.drawView.clearSignature()
+        
+        self.backValueclusore!("123")
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func clearImage(_ sender: Any) {
-        // self.backValueclusore!("123");
-        //  self.dismiss(animated: true, completion: nil);
+        self.drawView.clearSignature()
     }
 
     override func viewDidLoad() {
