@@ -33,7 +33,7 @@ public class handwrite: CAPPlugin {
         myViewController.backValueclusore = {(text:String)->Void in
                print("-\(text) message -\(text)")
                call.success(([
-                   "value": value
+                   "value": text
                ]))
         }
         
